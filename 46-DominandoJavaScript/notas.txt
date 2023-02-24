@@ -1,0 +1,95 @@
+Scope es el alcance que tiene una variable y existen dos tipos:
+    1. Alcance local
+    2. Alcance global
+
+El alcance local lo vemos reflejado al utilizar las palabras reservadas
+let y const y estas solo van a existir dentro de un bloque de codigo
+como lo es una funcion
+
+En cuando al alcance global es tal y como su nombre indica
+
+
+
+
+Hoisting hace referencia a la ejecucion en js, teniendo en cuenta
+que js realiza como dos procesos de ejecucion donde primero declara
+las variables y funciones y pues luego hace uso de las mismas. Lo 
+anterior hace que function declaration permita llamar una funcion antes
+de que la misma este declara pero function expretion nombre
+
+
+
+
+Coercion es la conversion automatica o implicita de valores de un tipo
+a otro. Ejemplo
+
+const numero1 = 20;
+const numero2 = "40";
+const suma = numero1 + numero2 // Esto va a hacer la transformacion a string, 
+aunque numero1 sea entero, eso es coercion
+
+
+
+
+Implicit Binding sirve para decir donde vamos a encontrar un valor, tal es
+el caso del this
+
+
+
+
+Para Explicit Binding es necesario tener en cuenta que hay tres funciones que
+exiten en todas las funciones incluyendo las que son creadas por nosotros, estas
+funciones son:
+    1. call
+    2. apply
+    3. bind
+
+Ejemplo:
+
+// Vamos a declarar una funcion que hace referencia a que tiene que encontrar
+// un valor en si misma como si fuera un objeto, sin la necesidad de pasarle el
+// mismo por parametro
+function persona( el1, el2 ) {
+    console.log(`Mi nombre es ${} y escucho ${el1} y ${el2}`);
+}
+
+const informacion = {
+    nombre: "Mario"
+}
+
+const musicaFavorita = ["Heavy Metal", "Rock"];
+
+// Con call es necesario pasar los elementos del array de manera separada
+persona.call( informacion, musicaFavorita[0], musicaFavorita[1] );
+
+// A diferencia de call, podemos pasar todo el array
+persona.apply( informacion, musicaFavorita );
+
+// Es como call pero genera una nueva funcion
+const nuevaFuncion = persona.bind( informacion, musicaFavorita[0], musicaFavorita[1] );
+nuevaFuncion();
+
+
+
+
+New Binding
+
+Ejemplo:
+function Auto( modelo, color ) {
+    // Se le conoce como new binding al generar ese acceso a this
+    this.modelo = modelo;
+    this.color = color;
+}
+
+const auto = new Auto( "Mustang", "Rojo" );
+// Nos permite acceder a sus valores
+console.log( auto.modelo );
+
+
+
+
+Ver: https://developer.mozilla.org/es/docs/Web/JavaScript/EventLoop#cola_queue
+
+
+
+Self basicamente se refiere a la ventana global

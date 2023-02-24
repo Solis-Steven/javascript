@@ -1,0 +1,16 @@
+¿Qué són los patrones de diseño?
+Son soluciones típicas a problemas comunes en desarrollo de software
+
+Beneficios
+    1. Son soluciones a problemas de diseño de código
+    2. Son soluciones probadas
+    3. Son soluciones conocidas por todos, y evitan la forma de 
+    escribir código "como cada quien entiende"
+
+Categorías de patrones
+    1. Creación: Permiten crear objetos y permiten la reutilización
+    del código
+    2. Estructura: Explican cómo deben de comunicarse los objetos
+    y clases en grandes proyectos
+    3. Comportamiento: Se encargan de cómo se comportan y comunican
+    los objetos
